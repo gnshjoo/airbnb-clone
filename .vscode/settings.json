@@ -1,5 +1,4 @@
 {
-    "python.pythonPath": "/Users/david/.local/share/virtualenvs/airbnb-clone-Klpbrsri/bin/python",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
