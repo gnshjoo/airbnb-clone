@@ -8,8 +8,9 @@ class SearchForm(forms.Form):
     city = forms.CharField(initial="Anywhere")
     country = CountryField(default="KR").formfield()
     room_types = forms.ModelChoiceField(
-        required = False,
-        empty_label="Any Kind", queryset=models.RoomType.objects.all()
+        required=False,
+        empty_label="Any Kind",
+        queryset=models.RoomType.objects.all()
     )
     price = forms.IntegerField(required=False)
     guests = forms.IntegerField(required=False)
@@ -18,7 +19,13 @@ class SearchForm(forms.Form):
     baths = forms.IntegerField(required=False)
     instant_book = forms.BooleanField(required=False)
     superhost = forms.BooleanField(required=False)
-    amenities = forms.ModelMultipleChoiceField(queryset=models.Amenity.objects.all(),
-     widget=forms.CheckboxSelectMultiple)
-    facilities = forms.ModelMultipleChoiceField(queryset=models.Facility.objects.all(), 
-    widget=forms.CheckboxSelectMultiple)
+    amenities = forms.ModelMultipleChoiceField(
+        queryset=models.Amenity.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
+    facilities = forms.ModelMultipleChoiceField(
+        queryset=models.Facility.objects.all(), 
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
