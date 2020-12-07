@@ -5,11 +5,15 @@
 {% endblock page_title %}
 {% block search-bar %}
 {% endblock search-bar %}
+
 {% block content %}
-<form method="POST" action="{% url "users:signup" %}">
-    <!-- {% csrf_token %} -->
-    {{form.as_p}}
-    <button>Sign Up</button>
-</form>
+
+    {% include 'partials/social_login.html' %}
+
+    <form method="POST" action="{% url "users:signup" %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Sign Up</button>
+    </form>
     
 {% endblock content %} 
