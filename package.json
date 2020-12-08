@@ -11,12 +11,14 @@
   },
   "homepage": "https://github.com/gnshjoo/airbnb-clone#readme",
   "devDependencies": {
-    "autoprefixer": "^9.7.0",
+    "autoprefixer": "^10.1.0",
     "gulp": "^4.0.2",
-    "gulp-csso": "^3.0.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.0",
+    "postcss-cli": "^8.3.0",
     "tailwindcss": "^2.0.1"
   }
 }
