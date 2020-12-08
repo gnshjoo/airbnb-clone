@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from . import models
 
 class LoginForm(forms.Form):
@@ -19,8 +20,14 @@ class LoginForm(forms.Form):
         except models.User.DoesNotExist:
             self.add_error("email", forms.ValidationError("User does not exist"))
 
-class SignUpForm(forms.ModelForm):
+# class SignUpForm(UserCreationForm):
+#     email = forms.EmailField()
 
+#     class Meta:
+#         model = models.User
+#         fields = ("email", )
+
+class SignUpForm(forms.From):
     class Meta:
         model = models.User
         fields = ("first_name", "last_name", "email")
