@@ -140,3 +140,4 @@ cython_debug/
 # mac
 .DS_Stroe
 uploads/
+node_modules/
