@@ -1,0 +1,5 @@
+
+<a href="{% url "rooms:detail" room.pk %}>
+    <img src="{{ room.first.photo}}" />
+    {{room.name}} / ${{room.price}}
+</a>
