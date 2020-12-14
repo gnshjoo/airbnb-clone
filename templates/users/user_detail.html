@@ -1,13 +1,28 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-    Login
+    {{user_obj.first_name}}'s Profile
 {% endblock page_title %}
 {% block search-bar %}
 {% endblock search-bar %}
 {% block content %}
     <div class="container lg:w-5/12 md:w-1/2 xl:w-1/4 mx-auto my-10 flex flex-col items-center border p-5 border-gray-400">
-        {{ user_obj .first_name }}
         
+            {% if user_obj.avatar %}
+            <div class="h-20 w-20 rounded-full bg-cover" style="background-image: url({{user_obj.avatar.url}});">
+            {% else %}    
+            <div class="bg-gray-700 h-20 w-20 rounded-full text-white flex justify-center items-center overflow-hidden">
+                <span>{{ user_obj.first_name | first}}</span>
+            {% endif %}
+        </div>
+        <div class="flex items-center">
+            <span class="text-3xl mt-1">{{ user_obj.first_name }}</span>
+            {% if user_obj.superhost %}
+                <i class="fas fas-check-circle text-teal-400 ml-1"></i>
+            {% endif %}
+                
+        </div>
+        <span class="text-lg mt-5">{{user.bio }}</span>
+        <button class="btn btn--small bg-red-500 text-white">Edit Prfile</button>
     </div>
 {% endblock content %} 
