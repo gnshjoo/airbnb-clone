@@ -67,12 +67,11 @@ class Reservation(core_models.TimeStampedModel):
             
             existing_booked_day = BookedDay.objects.filter(day__range=(start, end)).exists()
             if not existing_booked_day:
-                super()/save(*args, **kwargs)
+                super().save(*args, **kwargs)
                 for i in range(difference.days + 1):
                     day = start + datetime.timedelta(days=i)
                     BookedDay.objects.create(day=day, reservation=self)
                 return
-
         return super().save(*args, **kwargs)
 
         

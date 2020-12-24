@@ -5,5 +5,6 @@ app_name = "lists"
 
 
 urlpatterns = [
-    path("add/<int:room_pl>", views.save_room, name="save-room")
+    path("toggle/<int:room_pk>", views.toggle_room, name="toggle-room"),
+    path("favs/", views.SeeFavsVeiw.as_view(), name="see-favs"),
 ]
